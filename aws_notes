@@ -1,0 +1,26 @@
+#!/bin/bash
+
+===========================================
+       WELCOME TO AWS NOTES
+===========================================
+
+to write a script - to create a resource like EC2 or VM
+
+-> AWS CLI
+-> AWS API (Boto 3)
+-> AWS CFT 
+ other tool used to terraform (maintained by hashycop)
+these tools will connect directly to API to create infrastructure creartion
+all are choosing hybrid cloud model -things to automate terraform is best tool which intteracts with multiple cloud
+
+===========
+
+to access the instacce in mobaxterm
+
+--> ssh -i <give the pem file path> username@ip
+
+<chmod 600 <file path name>>  - this command to change the file permissions private
+
+command to create an s3 thorugh cli:
+cmd:'aws s3 mb s3://vetsabucket3 --region us-west-2'
+

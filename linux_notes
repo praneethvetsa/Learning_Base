@@ -1,0 +1,29 @@
+#!/bin/bash
+
+==================================
+    WELCOME TO LINUX NOTES
+==================================
+
+
+shell scirpting:
+-create a file
+-command line
+-by using shell commands we can talk to linux system
+popular shell commads:
+ls -ltr ---> it provides the timestamp and permissions, owner,size and time stamp
+touch --> to create a file
+
+to manage memeroy
+nproc -> to get information abt cpu
+free -> for memeory
+top -> for all the details all places in one place
+df --> disk
+***  man <commad>  to get manual of that related commands
+
+#!/  (#!/bin/bash or ksh or sh or dash)  --> shebang
+use case of the shebang why it is madatory in shell script
+most of the usecases or sh or bash - differnce b/w both
+-sh and bash are in the concept in linking so in previous scripts sh will redirected ti bash
+but now a days they are using linking script by default sh to dash which are in ubuntu machine 
+eg: #!/bin/bash
+
