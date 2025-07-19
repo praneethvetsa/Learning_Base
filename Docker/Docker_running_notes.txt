@@ -1,0 +1,106 @@
+===============================
+
+DOCKER 
+Why?
+When scaling / relaibality/ security aspects due to this issue they implemented the container concept
+Container have there ID and brands / type of the item present in the container and must be it is properly secured and isolated
+Secure
+Proper isolation
+Brand like linux/centos/shel/ubuntu
+Price
+Receipt which is called as docker file
+
+If the JAR is stored in container then we mak sure primary aspects like isolation/security/relaibliuty/scalable/
+When we pushing jar to container then we will get acknowledgement from the dokerfile which is called receipt which is called as docker image
+
+Docker file contain:
+Name of the person
+Run
+Copy
+Expose
+Cmd
+Entry point
+
+We have jar got from maven and which it need convert to image with the help of dockerfile and then it will be moving to container
+Once dockerfile is given a recepipt then it will be converted to image then that image will be shared to other by using dockerhub or jfrog
+Jar(maven)  ->  dockerfile (produce receipt)  -> image( this will be stared thourgh dockerhub)  ->  containerr
+
+Which and detils we will get when we take a photo from the mobile like size / who has cicked/ clicked time/ imgae id / type / location / 
+
+=======================
+DOCKER ARCHITECTURE
+
+Docker client (which is clled as commad promt)
+Docker daemon (background which is working proess and helps application to run or engines)
+Docker registry
+Docker image
+Docker container
+
+
+Docker build  -> which converts docker file into the image
+Docker pull -> it will pull image from the registry to our system
+Why It will go to registry -> bcz in that we will store all the image sin the registry by using the dockerhub and jfrog
+Docker run -->  it will helps to converts from image to the container
+
+Eg: 
+If 1 container == 1 linux machine then that required OS that we are deploying thrugh the docker file.
+Docker file is a file with set of intrsutions 
+FROM ubuntu:latest  (we are installing os) that defines the container platform
+RUN  < >   -> it is commads to install the softwares in the container as dynamically in the nature
+WORKDIR /opt   -->(to set the current working directory in the containers where the next commands to execute)
+COPY <JAR path> </opt/jar>    -> it will copy the file from host laptop to the container
+CMD ["java", "-jar", "/opt.jar"]    --> this commanf to excute the jar in the container to start the application
+->  to make the application start after entire process completed
+ADD <ZIP file>   -> like as copy and it unzips the file and copy in the container
+docker run -p 9000:9000 sonarqube:latest -e -a
+-e means environment variables
+-a arguments
+(with parameters)To establish my parameneter in the docker file then we will provide via CMD command {CMD ["$p1","$p2"]}  -> dynamic parametrized command
+(withput parameters)Suppose we don't need to pass any values in cmd then we will use ENTRYPOINT to start te application
+
+Syntax: foir docker file according to the project requirement
+FROM <TO INSTALL OS>
+RUN  < command to install software> 
+COPY  <file path of source and target>
+WORKDIR  <to chnange the path>
+EXPOSE <port no.>
+ADD <ZIP file> 
+CMD <after all setup is done to start the app>
+ENTRYPOINT <>
+
+Sudo apt install maven -y
+mvn clean install -DskipTests
+To run the jar without dockerwhich is got in target after running maven build 
+Java -jar <jar name>
+
+docker build .     -> command to build image where we have dockerfile there we need to run it
+docker images   -> which displayes the total images
+docker run  -> it will help to create a container
+(docker run -p 8081:8081 <container id>)
+When ever we need to go inside the container we need to use docker exec  (-it   -> interactive)
+docker exec -it <container id>  <type of login bash>
+We can go deep inside the container and we can check networking also with docker inspect
+docker inspect <contaner id > ---> we willl get cotainer schema to get updated
+
+We can major details like:
+Container ID:
+State : running, pasued, restarting, dead
+Hostpath, logpath
+Drivers  -> network
+Mounts  -> a normal ec2 have ebs volumes like the same thing for docker container have volumes which we will called ad mounts
+
+There are 3 types of networks in the docker network
+Bridge   -> which helps you to connect default ec2 instance network
+Network applies to containers running on the same docker daemon host
+Overlay --> when ever 2 ecs are running with their 
+Host
+Commands:
+docker network create -d overlay my-bridge_deveploymet   --> to connect multiple daemons
+
+To see network in docker :  docker network ls
+
+Assignment for docker:
+Need to comeplte the jenkins pipeline project
+Install jfrog and need to try some other instanced
+Docker steps
+Jenkins master slave configuration
