@@ -31,3 +31,43 @@ to access the instacce in mobaxterm
 command to create an s3 thorugh cli:
 cmd:'aws s3 mb s3://vetsabucket3 --region us-west-2'
 
+
+======================================================
+-------------********AWS ECR NOTES******------------------
+ECR - elastic contanier registry
+
+it is similar to docker hub
+quay.io  private
+gcr
+which means to store the images
+
+elastic means moslty highly scalable and avilablity in aws
+
+diff b/w ecr and docker hub
+docker is free and default will be public repos
+ecr supports by deafult it will private nature
+ecr is very easy intergration with other serivces like eks and others
+
+&&this is not a free service
+
+demoo:
+in ecr - create repository
+keep a private and it is access are managed by IAM
+provide the repo name
+enable the tag immuity
+enable the image scan setting
+to push aws is giving the see the view push commands from thewre we can push docker images into registry
+go to aws cli and confifure using the aws configure
+login to ecr using the aws ecr command
+(by default docker have docker login command)
+make sure provide proper policy attached
+after login 
+create a docker file
+docker build to image
+docker tag
+docker push 
+
+after this we will access directly our image in the ecr
+
+
+==========================================================================
