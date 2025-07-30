@@ -1,3 +1,18 @@
+🐳 What is Docker?
+Docker is an open-source platform that allows you to:
+Package, distribute, and run applications in lightweight, portable containers.
+Containers include everything the software needs to run: code, libraries, dependencies, and runtime — all bundled together.
+It solves the classic problem of "It works on my machine" by ensuring consistency across different environments.
+
+
+Layer Concept	Purpose / Benefit
+Layer Reuse	Docker caches unchanged layers to speed up builds.
+Smaller Image Size	Unchanged base layers are reused, reducing image size and bandwidth.
+Efficient Storage	Layers are stored as diffs — only changes are added layer by layer.
+Version Control-like	Changes are tracked step by step, making debugging and rollbacks easier.
+Parallel Use	Multiple containers can use the same base layers, saving space and memory.
+
+
 Virtual machines have their own OS whereas containers use the kernel of the host OS
 Docker works as client server architecture
 1️⃣ Docker Client – The user interface for interacting with Docker.
